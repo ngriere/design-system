@@ -1,0 +1,30 @@
+@import "variables/colors";
+@import "src/style/mixins/mixins";
+
+.ds-tag {
+  color: $ds-white-color;
+  background-color: $ds-primary-color;
+  border-radius: 0.25rem;
+  padding: 0.1875rem 0.6875rem;
+  display: inline-block;
+  margin-left: calc-from-grid(0.5);
+  margin-bottom: calc-from-grid(0.5);
+
+  &--disabled {
+    background-color: $ds-grey-color-100;
+    color: $ds-grey-color-700;
+
+    .ds-tag__icon {
+      cursor: not-allowed;
+    }
+  }
+
+  &__icon {
+    padding-left: calc-from-grid(1);
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+  }
+}

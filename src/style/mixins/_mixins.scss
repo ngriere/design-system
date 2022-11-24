@@ -1,0 +1,3 @@
+@function calc-from-grid($nb-cell) {
+  @return $nb-cell * 8px;
+}

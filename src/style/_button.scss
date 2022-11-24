@@ -1,0 +1,199 @@
+@import "mixins/mixins";
+@import "variables/colors";
+
+$btn-primary-active-background-color: $ds-primary-color-400;
+$btn-primary-disabled-background-color: $ds-secondary-color-400;
+
+$btn-secondary-border: solid 1px $ds-secondary-color;
+$btn-secondary-focus-border: solid 1px $ds-secondary-color-300;
+$btn-secondary-disabled-border: solid 1px $ds-secondary-color-400;
+$btn-secondary-active-color: $ds-secondary-color;
+
+$btn-secondary-light-border: solid 1px $ds-white-color;
+$btn-secondary-light-focus-border: solid 1px $ds-secondary-color-100;
+$btn-secondary-light-disabled-border: solid 1px $ds-secondary-color-200;
+$btn-secondary-light-active-color: $ds-secondary-color-100;
+
+$btn-height: calc-from-grid(5);
+$btn-padding: calc-from-grid(1) calc-from-grid(3);
+$btn-border-radius: $btn-height / 2;
+$halo-animation-speed: 0.5s;
+
+.ds-btn {
+  position: relative;
+  height: $btn-height;
+  padding: $btn-padding;
+  border-radius: $btn-border-radius;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: lowercase;
+  cursor: pointer;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, font-weight 0.5s ease-in-out;
+  }
+
+  /* Effet Halo */
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    padding: $btn-height/2 50%;
+    width: $btn-height/2;
+    height: $btn-height/2;
+    background-color: $ds-white-color;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity $halo-animation-speed ease-in-out, transform $halo-animation-speed ease-in-out;
+  }
+
+  /* Effet Halo Active */
+  &:active:after {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s ease-in-out;
+  }
+
+  &:disabled:after {
+    opacity: 0;
+  }
+
+  &--primary {
+    color: $ds-carbon-white;
+    background-color: $ds-primary-color;
+    border: none;
+
+    &:hover {
+      background-color: $btn-primary-active-background-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background-color: $btn-primary-active-background-color;
+    }
+
+    &:disabled {
+      background-color: $ds-grey-color-400;
+      color: $ds-grey-color-700;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    color: $ds-secondary-color;
+    background-color: $ds-white-color;
+    border: $btn-secondary-border;
+
+    &:hover {
+      background-color: $ds-secondary-color-400;
+      color: $ds-white-color;
+      border: $btn-secondary-focus-border;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background-color: $ds-secondary-color;
+      color: $ds-white-color;
+    }
+
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:focus {
+      border: none;
+      background-color: $ds-grey-color-400;
+      color: $ds-grey-color-700;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary-light {
+    background: none;
+    color: $ds-white-color;
+    border: $btn-secondary-light-border;
+
+    &:hover {
+      background-color: $ds-secondary-color-100;
+      color: $ds-secondary-color;
+      border: $btn-secondary-light-focus-border;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background-color: $ds-secondary-color-100;
+      color: $ds-secondary-color;
+    }
+
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:focus {
+      border: none;
+      background-color: $ds-grey-color-400;
+      color: $ds-white-color;
+      cursor: not-allowed;
+    }
+  }
+
+  &--tertiary {
+    background: none;
+    border: none;
+    color: $ds-secondary-color;
+    text-decoration: underline;
+
+    &:hover {
+      font-weight: bold;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      color: $ds-secondary-color;
+    }
+
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:focus {
+      border: none;
+      color: $ds-grey-color-700;
+      cursor: not-allowed;
+      font-weight: normal;
+    }
+  }
+
+  &--tertiary-light {
+    background: none;
+    border: none;
+    color: $ds-white-color;
+    text-decoration: underline;
+
+    &:hover {
+      font-weight: bold;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled {
+      color: $ds-white-color;
+      font-weight: normal;
+      cursor: not-allowed;
+    }
+  }
+}

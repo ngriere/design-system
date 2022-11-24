@@ -1,0 +1,70 @@
+@import "variables/colors";
+
+$font-size-base: 1rem;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2.1875rem;
+$font-size-h3: 1.875rem;
+$font-size-h4: 1.5625rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 0.9375rem;
+
+$default-text-color: $ds-carbon-primary;
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'larsseit', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: $font-size-base;
+  color: $default-text-color;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'larsseit', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  display: inline-block;
+  font-family: 'larsseit', sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1:after {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  content: " ";
+  border: solid 2px $ds-primary-color;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+h6 {
+  font-size: $font-size-h5;
+}

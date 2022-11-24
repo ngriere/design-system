@@ -1,0 +1,33 @@
+@import "variables/colors";
+
+* {
+  scrollbar-color: $ds-primary-color $ds-grey-color-50;
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: $ds-grey-color-50;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $ds-primary-color-400;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $ds-primary-color;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  font-family: "IBM Plex Sans", sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

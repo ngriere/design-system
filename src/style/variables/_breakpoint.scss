@@ -1,0 +1,4 @@
+// Screen and device breakpoints
+$ds-breakpoint-screen-mobile: "only screen and (max-width : 599px)";
+$ds-breakpoint-screen-laptop: "only screen and (min-width : 600px) and (max-width : 1279px)";
+$ds-breakpoint-screen-desktop: "only screen and (min-width : 1280px)";
